@@ -26,7 +26,7 @@ namespace Examples.Tests.Classes
 		public void SimpleService_ReadCar()
 		{
 			//arrange
-			
+
 
 			//act
 			var result = _vehicleService.ReadCar("Accord");
@@ -42,7 +42,7 @@ namespace Examples.Tests.Classes
 
 
 			//act
-			var result = _vehicleService.ReadPlane("Camery");
+			var result = _vehicleService.ReadCar("Camery");
 
 			//assert
 			Assert.IsNull(result);
