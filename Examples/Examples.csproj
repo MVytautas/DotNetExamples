@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\VehicleService.cs" />
-    <Compile Include="IVehicleService.cs" />
+    <Compile Include="Impl\VehicleService.cs" />
+    <Compile Include="Interfaces\IVehicleService.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
