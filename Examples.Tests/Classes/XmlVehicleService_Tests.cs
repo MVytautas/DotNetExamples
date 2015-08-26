@@ -11,13 +11,13 @@ using System.Xml.Linq;
 namespace Examples.Tests.Classes
 {
 	[TestClass]
-	public class VehicleService_Tests
+	public class XmlVehicleService_Tests
 	{
 		[TestInitialize]
 		public void Setup()
 		{
 			var sampleDB = XDocument.Parse(Sampledata.Vehicles);
-			_vehicleService = new VehicleService(sampleDB);
+			_vehicleService = new XmlVehicleService(sampleDB);
 		}
 
 		private IVehicleService _vehicleService;

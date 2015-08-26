@@ -19,15 +19,11 @@ namespace Examples.Models
 
 		public string Name { get; set; }
 
-
 		public string Cost { get; set; }
-
 
 		public int Passengers { get; set; }
 
-
 		public int Wheels { get; set; }
-
 
 		public string Manufacturer { get; set; }
 	}

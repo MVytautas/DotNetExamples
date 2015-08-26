@@ -39,9 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Impl\VehicleService.cs" />
+    <Compile Include="Impl\XmlVehicleService.cs" />
     <Compile Include="Interfaces\IVehicleService.cs" />
-    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Vehicles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

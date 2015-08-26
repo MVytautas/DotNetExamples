@@ -8,9 +8,9 @@ using System.Xml.Linq;
 
 namespace Examples.Classes
 {
-	public class VehicleService : IVehicleService
+	public class XmlVehicleService : IVehicleService
 	{
-		public VehicleService(XDocument doc)
+		public XmlVehicleService(XDocument doc)
 		{
 			_doc = doc;
 		}
@@ -38,6 +38,11 @@ namespace Examples.Classes
 		}
 
 		public List<string> ReadAllManufacturers()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Vehicles ReadAllVehicles()
 		{
 			throw new NotImplementedException();
 		}

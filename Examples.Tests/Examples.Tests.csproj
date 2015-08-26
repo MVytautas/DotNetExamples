@@ -52,7 +52,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Classes\VehicleService_Tests.cs" />
+    <Compile Include="Classes\JsonVehicleService_Tests.cs" />
+    <Compile Include="Classes\XmlVehicleService_Tests.cs" />
     <Compile Include="Sampledata.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

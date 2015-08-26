@@ -10,6 +10,8 @@ namespace Examples
 {
 	public interface IVehicleService
 	{
+		Vehicles ReadAllVehicles();
+		
 		Car ReadCar(String carName);
 		Plane ReadPlane(String planeName);
 		
