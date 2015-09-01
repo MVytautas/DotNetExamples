@@ -146,4 +146,33 @@
 	&lt;/cars&gt;
 &lt;/vehicles&gt;</value>
   </data>
+  <data name="VehiclesJson" xml:space="preserve">
+    <value>{
+	planes:[
+		{
+			name: "Boeing 747",
+			cost: "$24 million",
+			passengers: 524,
+			engines: 2,
+			manufacturer: "Boeing",
+		}
+	],
+	cars:[
+		{
+			name: "Accord",
+			cost: "$20,000",
+			passengers: 5,
+			wheels: 4,
+			manufacturer: "Honda",
+		},
+		{
+			name: "BMW 5 Series",
+			cost: "$40,000",
+			passengers: 4,
+			wheels: 4,
+			manufacturer: "BMW",
+		}
+	]
+}</value>
+  </data>
 </root>

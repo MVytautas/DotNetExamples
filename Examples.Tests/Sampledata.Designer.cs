@@ -91,5 +91,40 @@ namespace Examples.Tests {
                 return ResourceManager.GetString("Vehicles", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	planes:[
+        ///		{
+        ///			name: &quot;Boeing 747&quot;,
+        ///			cost: &quot;$24 million&quot;,
+        ///			passengers: 524,
+        ///			engines: 2,
+        ///			manufacturer: &quot;Boeing&quot;,
+        ///		}
+        ///	],
+        ///	cars:[
+        ///		{
+        ///			name: &quot;Accord&quot;,
+        ///			cost: &quot;$20,000&quot;,
+        ///			passengers: 5,
+        ///			wheels: 4,
+        ///			manufacturer: &quot;Honda&quot;,
+        ///		},
+        ///		{
+        ///			name: &quot;BMW 5 Series&quot;,
+        ///			cost: &quot;$40,000&quot;,
+        ///			passengers: 4,
+        ///			wheels: 4,
+        ///			manufacturer: &quot;BMW&quot;,
+        ///		}
+        ///	]
+        ///}.
+        /// </summary>
+        internal static string VehiclesJson {
+            get {
+                return ResourceManager.GetString("VehiclesJson", resourceCulture);
+            }
+        }
     }
 }
