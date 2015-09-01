@@ -10,10 +10,10 @@ using System.Xml.Linq;
 
 namespace Examples.Tests.Classes
 {
-	[TestClass]
+	[TestClass]  // In this class all test methods is included bellow? What is stand for?
 	public class XmlVehicleService_Tests
 	{
-		[TestInitialize]
+		[TestInitialize] // What is stand for // There I can initialize from where I can take all data and set data source?
 		public void Setup()
 		{
 			var sampleDB = XDocument.Parse(Sampledata.Vehicles);
@@ -55,10 +55,10 @@ namespace Examples.Tests.Classes
 
 
 			//act
-			var result = _vehicleService.ReadPlane("Boeing 747");
+            var result = _vehicleService.ReadPlane("Boeing 747");
 
 			//assert
-			Assert.IsNotNull(result);
+			Assert.IsNotNull(result);   
 		}
 
 		[TestMethod]

@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Classes\JsonVehicleService_Tests.cs" />
+    <Compile Include="Classes\XmlReader.cs" />
     <Compile Include="Classes\XmlVehicleService_Tests.cs" />
     <Compile Include="Sampledata.Designer.cs">
       <AutoGen>True</AutoGen>
