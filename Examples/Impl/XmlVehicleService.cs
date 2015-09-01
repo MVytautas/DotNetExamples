@@ -10,39 +10,39 @@ using System.Xml.Linq;
 
 namespace Examples.Classes
 {
-	public  class XmlVehicleService : IVehicleService
-	{
-		public XmlVehicleService(XDocument doc)
-		{
-			_doc = doc;
-		}
+    public class XmlVehicleService : IVehicleService
+    {
+        public XmlVehicleService(XDocument doc)
+        {
+            _doc = doc;
+        }
 
-		private XDocument _doc;
+        private XDocument _doc;
 
 
-		public Car ReadCar(string carName)
-		{
-			var elm = _doc
-				.Element("vehicles")
-				.Element("cars")
-				.Elements("car")
-				.Where(e => e.Element("name").Value == carName)
-				.FirstOrDefault();
-			if (elm != null)
-			{
-				var car = new Car();
-				car.Cost = elm.Element("cost").Value;
-				car.Manufacturer = elm.Element("manufacturer").Value;
-				car.Name = carName;
-				car.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
-				car.Wheels = Convert.ToInt32(elm.Element("wheels").Value);
-				return car;
-			}
-			else
-			{
-				return null;
-			}
-		}
+        public Car ReadCar(string carName)
+        {
+            var elm = _doc
+                .Element("vehicles")
+                .Element("cars")
+                .Elements("car")
+                .Where(e => e.Element("name").Value == carName)
+                .FirstOrDefault();
+            if (elm != null)
+            {
+                var car = new Car();
+                car.Cost = elm.Element("cost").Value;
+                car.Manufacturer = elm.Element("manufacturer").Value;
+                car.Name = carName;
+                car.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
+                car.Wheels = Convert.ToInt32(elm.Element("wheels").Value);
+                return car;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public Plane ReadPlane(string planeName)
         {
@@ -70,83 +70,69 @@ namespace Examples.Classes
             }
         }
 
-	    public List<Car> ReadAllCars()
-	    {
-	        throw new NotImplementedException();
-	    }
-
-	    //public List<Car> ReadAllCars()
+        //public List<Car> ReadAllCars()
         //{
         //    throw new NotImplementedException();
         //}
 
-	    //public Plane ReadPlane(string planeName)
+        //public List<Car> ReadAllCars()
         //{
         //    throw new NotImplementedException();
         //}
 
-	    public List<Car> ReadAllCars(string cars)
-	    {
-	        var elm =
-	            _doc.Element("vehicles")
-	                .Element("cars")
-	                .Elements("car")
-	                .Where(x => x.Element("name").Value == cars)
-	                .ToList();
-
-	        if (elm != null)
-	        {
-	            var carstring =
-	                _doc.Element("vehicles")
-	                    .Element("cars").ToString().FromXML<List<Car>>();
-
-
-                var s = new XmlSerializer(typeof(List<Car>));
-                using (var reader = new StringReader(carstring))
-                {
-                    return (List<Car>)s.Deserialize(reader);
-                   
-                }
-
-	            //    var car = new Car();
-	            //    foreach (var car in elm)
-	            //    {
-	            //        car.Name = cars;
-	            //    }
-	            //    return car;
-	            //}
-	            //else
-	            //{
-	            //    return null;
-	            //}
-
-	        }
-            return null;
-	    }
-
-	    //public List<Car> ReadAllCars()
+        //public Plane ReadPlane(string planeName)
         //{
         //    throw new NotImplementedException();
         //}
 
-		public List<Plane> ReadAllPlanes()
-		{
-			throw new NotImplementedException();
-		}
+        public List<Car> ReadAllCars()
+        {
+            var elms =
+                _doc.Element("vehicles")
+                    .Element("cars")
+                    .Elements("car")
+                    .ToList();
 
-		public List<string> ReadAllManufacturers()
-		{
-			throw new NotImplementedException();
-		}
+            var cars = new List<Car>();
+            foreach (var elm in elms)
+            {
+                var car = new Car();
+                car.Cost = elm.Element("cost").Value;
+                car.Manufacturer = elm.Element("manufacturer").Value;
+                car.Name = elm.Element("name").Value;
+                car.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
+                car.Wheels = Convert.ToInt32(elm.Element("wheels").Value);
+                cars.Add(car);
+            }
+            return cars;
+        }
 
-		public Vehicles ReadAllVehicles()
-		{
-			
-			throw new NotImplementedException();
-		}
+        //public List<Car> ReadAllCars()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-       
-	}
+        public List<Plane> ReadAllPlanes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> ReadAllManufacturers()
+        {
+            var elms =
+                _doc.Descendants("manufacturer").Select(x => x.Value).ToList();
+            return elms;
+
+        }
+
+        public Vehicles ReadAllVehicles()
+        {
+
+            throw new NotImplementedException();
+        }
+
+
+    }
 
     public static class Exstensions
     {
