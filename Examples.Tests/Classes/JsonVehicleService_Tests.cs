@@ -1,4 +1,5 @@
-﻿using Examples.Models;
+﻿using Examples.Classes;
+using Examples.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System;
@@ -16,7 +17,8 @@ namespace Examples.Tests.Classes
 		public void Setup()
 		{
 			var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
-			//_vehicleService = new JsonVehicleService(sampleDB);
+			_vehicleService = new JsonVehicleService(sampleDB.ToString());
+            //_vehicleService = new JsonVehicleService(Sampledata.VehiclesJson);
 			//The JsonVehicleService can NOT have any 'if', 'for', 'foreach', or 'while' statements
 			//you must use 'where', 'select', 'selectmany', 'union' with lambas
 		}

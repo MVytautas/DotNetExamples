@@ -114,7 +114,24 @@ namespace Examples.Classes
 
         public List<Plane> ReadAllPlanes()
         {
-            throw new NotImplementedException();
+            var elms =
+                _doc.Element("vehicles")
+                    .Element("planes")
+                    .Elements("plane")
+                    .ToList();
+
+            var planes = new List<Plane>();
+            foreach (var elm in elms)
+            {
+                var plane = new Plane();
+                plane.Cost = elm.Element("cost").Value;
+                plane.Manufacturer = elm.Element("manufacturer").Value;
+                plane.Name = elm.Element("name").Value;
+                plane.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
+                plane.Engines = Convert.ToInt32(elm.Element("engines").Value);
+                planes.Add(plane);
+            }
+            return planes;
         }
 
         public List<string> ReadAllManufacturers()
@@ -125,7 +142,7 @@ namespace Examples.Classes
 
         }
 
-        public Vehicles ReadAllVehicles()
+        public Vehicles ReadAllVehicles() // There are no test for this scenario?
         {
 
             throw new NotImplementedException();
