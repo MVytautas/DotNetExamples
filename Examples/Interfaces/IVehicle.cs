@@ -8,12 +8,12 @@ namespace Examples.Interfaces
 {
 	public interface IVehicle
 	{
-		public string Name { get; set; }
+		string Name { get; set; }
 
-		public string Cost { get; set; }
+		string Cost { get; set; }
 
-		public int Passengers { get; set; }
+		int Passengers { get; set; }
 
-		public string Manufacturer { get; set; }
+		string Manufacturer { get; set; }
 	}
 }
