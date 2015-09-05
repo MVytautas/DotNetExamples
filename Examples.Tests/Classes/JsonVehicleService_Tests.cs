@@ -17,7 +17,10 @@ namespace Examples.Tests.Classes
 		public void Setup()
 		{
 			var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
-			_vehicleService = new JsonVehicleService(sampleDB.ToString());
+
+
+
+			_vehicleService = new JsonVehicleService(sampleDB);
             //_vehicleService = new JsonVehicleService(Sampledata.VehiclesJson);
 			//The JsonVehicleService can NOT have any 'if', 'for', 'foreach', or 'while' statements
 			//you must use 'where', 'select', 'selectmany', 'union' with lambas

@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Impl\JsonVehicleService.cs" />
     <Compile Include="Impl\XmlVehicleService.cs" />
-    <Compile Include="Interfaces\IVehicle.cs" />
     <Compile Include="Interfaces\IVehicleService.cs" />
     <Compile Include="Models\Vehicles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

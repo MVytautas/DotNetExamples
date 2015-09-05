@@ -1,5 +1,4 @@
-﻿using Examples.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,32 +6,81 @@ using System.Threading.Tasks;
 
 namespace Examples.Models
 {
-	public partial class Vehicles : List<IVehicle>
+	public partial class Vehicles
 	{
-		//TODO: update planes and cars 'get' and 'set' to read and add from the base list
+
 		public List<Plane> planes { get; set; }
 
 		public List<Car> cars { get; set; }
 	}
 
-	public abstract class Vehicle : IVehicle
-	{
-		//TODO: add properties
-	}
-
 	public partial class Car
 	{
-		//TODO: make Car implement Vehicle
+
+		public string Name { get; set; }
+
+		public string Cost { get; set; }
+
+		public int Passengers { get; set; }
+
 		public int Wheels { get; set; }
 
+		public string Manufacturer { get; set; }
 	}
 
 
 	public partial class Plane
 	{
-		//TODO: make Plane implement Vehicle
+
+		private string _name;
+
+		private string _cost;
+
+		private int _passengers;
 
 		private int _engines;
+
+		private string _manufacturer;
+
+
+		public string Name
+		{
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+			}
+		}
+
+
+		public string Cost
+		{
+			get
+			{
+				return _cost;
+			}
+			set
+			{
+				_cost = value;
+			}
+		}
+
+
+		public int Passengers
+		{
+			get
+			{
+				return _passengers;
+			}
+			set
+			{
+				_passengers = value;
+			}
+		}
+
 
 		public int Engines
 		{
@@ -46,6 +94,18 @@ namespace Examples.Models
 			}
 		}
 
+
+		public string Manufacturer
+		{
+			get
+			{
+				return _manufacturer;
+			}
+			set
+			{
+				_manufacturer = value;
+			}
+		}
 	}
 
 

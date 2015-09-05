@@ -13,46 +13,47 @@ namespace Examples.Classes
 {
     public class JsonVehicleService : IVehicleService
     {
-        public JsonVehicleService(string jsonInput) // I google that, this represents an Json document. " JObject "
+		public JsonVehicleService(Vehicles vehicles) // I google that, this represents an Json document. " JObject "
         {
-
-            _carList = JsonConvert.DeserializeObject<List<Car>>(jsonInput);
-            _planeList = JsonConvert.DeserializeObject<List<Plane>>(jsonInput);
+			_vehicles = vehicles;
         }
 
-        private List<Car> _carList;
-        private List<Plane> _planeList; 
+		private Vehicles _vehicles; 
 
         public Vehicles ReadAllVehicles() // Do I need ti impelemt this one also?
         {
-            throw new NotImplementedException();
+			return _vehicles;
         }
 
-        //The JsonVehicleService can NOT have any 'if', 'for', 'foreach', or 'while' statements
-        //you must use 'where', 'select', 'selectmany', 'union' with lambas
         public Car ReadCar(string carName)
         {
-            return _carList.SingleOrDefault(x => x.Name == carName);
+			return _vehicles.cars.FirstOrDefault(x => x.Name == carName);
         }
 
         public Plane ReadPlane(string planeName)
         {
-            return _planeList.SingleOrDefault(x => x.Name == planeName);
+			return _vehicles.planes.FirstOrDefault(x => x.Name == planeName);
         }
 
         public List<Car> ReadAllCars()
         {
-            return _carList.SelectMany(name => name.Name, <Car>);
+			return _vehicles.cars;
         }
 
         public List<Plane> ReadAllPlanes()
         {
-            return _carList.SelectMany(name => name.Name, <Car>);
+			return _vehicles.planes;
         }
 
-        public List<string> ReadAllManufacturers()
+        public List<String> ReadAllManufacturers()
         {
-            throw new NotImplementedException();
+			var results = new List<String>();
+
+			results.AddRange(_vehicles.cars.Select(c => c.Manufacturer));
+
+			results.AddRange(_vehicles.planes.Select(c => c.Manufacturer));
+
+			return results;
         }
     }
 }
