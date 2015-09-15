@@ -61,6 +61,59 @@ namespace Examples.Tests {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [{
+        ///ID: 1,
+        ///Name: &quot;Boeing&quot;,
+        ///TypesOfVehicles: &quot;Plane&quot; ,
+        ///Location: &quot;USA&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 2,
+        ///Name: &quot;Honda&quot;,
+        ///TypesOfVehicles: &quot;Car&quot;,
+        ///Location: &quot;Japan&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 3,
+        ///Name: &quot;BMW&quot;,
+        ///TypesOfVehicles: &quot;Car&quot;,
+        ///Location: &quot;UK&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 4,
+        ///Name: &quot;Lockheed Martin&quot;,
+        ///TypesOfVehicles: &quot;Plane&quot; ,
+        ///Location: &quot;USA&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 5,
+        ///Name: &quot;Mercedes-Benz&quot;,
+        ///TypesOfVehicles: &quot;Car&quot;,
+        ///Location: &quot;Germany&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 6,
+        ///Name: &quot;Volkswagen&quot;,
+        ///TypesOfVehicles: &quot;Car&quot;,
+        ///Location: &quot;Germany&quot;,
+        ///},
+        ///
+        ///{
+        ///ID: 7,
+        ///Name: &quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Manufacturers {
+            get {
+                return ResourceManager.GetString("Manufacturers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;vehicles&gt;
         ///	&lt;planes&gt;
         ///		&lt;plane&gt;
@@ -101,25 +154,30 @@ namespace Examples.Tests {
         ///			passengers: 524,
         ///			engines: 2,
         ///			manufacturer: &quot;Boeing&quot;,
-        ///		}
-        ///	],
-        ///	cars:[
-        ///		{
-        ///			name: &quot;Accord&quot;,
-        ///			cost: &quot;$20,000&quot;,
-        ///			passengers: 5,
-        ///			wheels: 4,
-        ///			manufacturer: &quot;Honda&quot;,
         ///		},
         ///		{
-        ///			name: &quot;BMW 5 Series&quot;,
-        ///			cost: &quot;$40,000&quot;,
-        ///			passengers: 4,
-        ///			wheels: 4,
-        ///			manufacturer: &quot;BMW&quot;,
+        ///			name: &quot;F-35&quot;,
+        ///			cost: &quot;$100 million&quot;,
+        ///			passengers: 1,
+        ///			engines: 1,
+        ///			manufacturer: &quot;Lockheed Martin&quot;,
+        ///		},
+        ///		{
+        ///			name: &quot;A380&quot;,
+        ///			cost: &quot;$30 million&quot;,
+        ///			passengers: 555,
+        ///			engines: 4,
+        ///			manufacturer: &quot;Airbus&quot;,
+        ///		},
+        ///		{
+        ///			name: &quot;A350&quot;,
+        ///			cost: &quot;$20 million&quot;,
+        ///			passengers: 280,
+        ///			engines: 4,
+        ///			manufacturer: &quot;Airbus&quot;,
         ///		}
-        ///	]
-        ///}.
+        ///	],
+        ///	car [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string VehiclesJson {
             get {

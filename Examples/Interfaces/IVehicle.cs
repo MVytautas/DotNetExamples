@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Examples.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Examples.Interfaces
 
 		int Passengers { get; set; }
 
-		string Manufacturer { get; set; }
+		int ManufacturerID { get; set; }
+		Manufacturer Manufacturer { get; set; }
 	}
 }

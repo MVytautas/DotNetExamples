@@ -90,6 +90,7 @@ namespace Examples.Models
         public override string Speak()
         {
             // warble    
+			throw new NotImplementedException();
         }
 
 	    public override void Move(string location)
@@ -115,6 +116,8 @@ namespace Examples.Models
         throw new NotImplementedException();
     }
 	}
+
+
 
 
 	public class Dog : Mammal
