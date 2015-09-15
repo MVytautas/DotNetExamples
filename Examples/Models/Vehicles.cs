@@ -18,6 +18,7 @@ namespace Examples.Models
 	public abstract class Vehicle : IVehicle
 	{
 		//TODO: add properties // DONE
+	    public abstract string Name { get; set; }
 	    public String Cost { get; set; }
 	    public String Manufacturer { get; set; }
 	    public Int32 Passengers { get; set; }
@@ -29,7 +30,7 @@ namespace Examples.Models
 	    public abstract void Fly(string location);
 	}
 
-	public partial class Car : Vehicle
+	public abstract partial class Car : Vehicle
 	{
 		//TODO: make Car implement Vehicle
 		public int Wheels { get; set; }
@@ -42,7 +43,7 @@ namespace Examples.Models
 	}
 
 
-	public partial class Plane : Vehicle
+	public abstract partial class Plane : Vehicle
 	{
 		//TODO: make Plane implement Vehicle
 
@@ -67,7 +68,7 @@ namespace Examples.Models
 
 	}
 
-    public class Honda : Car
+    public abstract class Honda : Car
     {
         public override void Ride(string location)
         {
@@ -75,7 +76,7 @@ namespace Examples.Models
         }
     }
 
-    public class Boeing : Plane
+    public abstract class Boeing : Plane
     {
         public override void Fly(string location)
         {
