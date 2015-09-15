@@ -117,6 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>[{
+ID: 1,
+Name: "Boeing",
+TypesOfVehicles: "Plane" ,
+Location: "USA",
+},
+
+{
+ID: 2,
+Name: "Honda",
+TypesOfVehicles: "Car",
+Location: "Japan",
+},
+
+{
+ID: 3,
+Name: "BMW",
+TypesOfVehicles: "Car",
+Location: "UK",
+},
+
+{
+ID: 4,
+Name: "Lockheed Martin",
+TypesOfVehicles: "Plane" ,
+Location: "USA",
+},
+
+{
+ID: 5,
+Name: "Mercedes-Benz",
+TypesOfVehicles: "Car",
+Location: "Germany",
+},
+
+{
+ID: 6,
+Name: "Volkswagen",
+TypesOfVehicles: "Car",
+Location: "Germany",
+},
+
+{
+ID: 7,
+Name: "Airbus",
+TypesOfVehicles: "Plane" ,
+Location: "France",
+},
+]</value>
+  </data>
   <data name="Vehicles" xml:space="preserve">
     <value>&lt;vehicles&gt;
 	&lt;planes&gt;
@@ -155,6 +206,27 @@
 			passengers: 524,
 			engines: 2,
 			manufacturer: "Boeing",
+		},
+		{
+			name: "F-35",
+			cost: "$100 million",
+			passengers: 1,
+			engines: 1,
+			manufacturer: "Lockheed Martin",
+		},
+		{
+			name: "A380",
+			cost: "$30 million",
+			passengers: 555,
+			engines: 4,
+			manufacturer: "Airbus",
+		},
+		{
+			name: "A350",
+			cost: "$20 million",
+			passengers: 280,
+			engines: 4,
+			manufacturer: "Airbus",
 		}
 	],
 	cars:[
@@ -166,11 +238,32 @@
 			manufacturer: "Honda",
 		},
 		{
+			name: "Civic",
+			cost: "$15,000",
+			passengers: 4,
+			wheels: 4,
+			manufacturer: "Honda",
+		},
+		{
 			name: "BMW 5 Series",
 			cost: "$40,000",
 			passengers: 4,
 			wheels: 4,
 			manufacturer: "BMW",
+		},
+		{
+			name: "Beetle",
+			cost: "$35,000",
+			passengers: 4,
+			wheels: 4,
+			manufacturer: "Volkswagen ",
+		},
+		{
+			name: "Jetta",
+			cost: "$39,000",
+			passengers: 5,
+			wheels: 4,
+			manufacturer: "Volkswagen ",
 		}
 	]
 }</value>

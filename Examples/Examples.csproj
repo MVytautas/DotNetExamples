@@ -45,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Impl\JsonVehicleService.cs" />
+    <Compile Include="Impl\ManufacturerRepository.cs" />
     <Compile Include="Impl\XmlVehicleService.cs" />
+    <Compile Include="Interfaces\IManufacturerRepository.cs" />
     <Compile Include="Interfaces\IVehicle.cs" />
     <Compile Include="Interfaces\IVehicleService.cs" />
     <Compile Include="Models\Animals.cs" />
+    <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\Vehicles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
