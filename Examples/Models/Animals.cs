@@ -22,6 +22,7 @@ namespace Examples.Models
 		public String Name { get; set; }
 		public Int32 Weight { get; set; }
 		public String Color { get; set; }
+        public Boolean Life { get; set; }
 
 		public void Eat(string food)
 		{
@@ -31,13 +32,45 @@ namespace Examples.Models
 		{
 			//move
 		}
-		public abstract String Speak();
+
+	    public abstract Object Hunt();
+
+		public abstract String Speak(); // abstract == required
 	}
 
 	public abstract class Mammal : Animal
 	{
-
+	    public override void Move(string location)
+	    {
+	        // walking
+	    }
 	}
+
+    public abstract class Reptiles : Animal
+    {
+        public override void Move(string location)
+        {
+            // slide
+        }
+
+        public override string Speak()
+        {
+            return null;
+        }
+    }
+
+    public abstract class Amphibians : Animal
+    {
+        public override void Move(string location)
+        {
+            // slide
+        }
+
+        public override string Speak()
+        {
+            return null;
+        }
+    }
 
 	public abstract class Fish : Animal
 	{
@@ -52,11 +85,22 @@ namespace Examples.Models
 		}
 	}
 
-	public abstract class Brid : Animal
+	public abstract class Bird : Animal
 	{
+        public override string Speak()
+        {
+            // warble    
+        }
 
+	    public override void Move(string location)
+	    {
+	        // fly
+	    }
 	}
 
+/// <summary>
+/// HERE LISTING ALL ANIMALS BELOW
+/// </summary>
 	public class Cat : Mammal
 	{
 		public Int32 Lives = 9;
@@ -65,8 +109,12 @@ namespace Examples.Models
 		{
 			return "Meow";
 		}
-	}
 
+    public override object Hunt()
+    {
+        throw new NotImplementedException();
+    }
+	}
 
 
 	public class Dog : Mammal
@@ -75,16 +123,35 @@ namespace Examples.Models
 		{
 			return "Woof";
 		}
+
+	    public override object Hunt()
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 
 
 	public class Shark : Fish
 	{
-
+	    public override object Hunt()
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 
 	public class Salmon : Fish
 	{
-
+	    public override object Hunt()
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
+
+    public class Fog : Amphibians
+    {
+        public override object Hunt()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
