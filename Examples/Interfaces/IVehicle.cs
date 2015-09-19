@@ -16,9 +16,21 @@ namespace Examples.Interfaces
 		int Passengers { get; set; }
 
 		int ManufacturerID { get; set; }
-		string Manufacturer { get; set; }
-	    int Wheels { get; set; }
-	    int Engines { get; set; }
+		
+		
+		Manufacturer Manufacturer { get; set; }
+		
+	}
+
+
+	public interface ICar : IVehicle
+	{
+		int Wheels { get; set; }
+	}
+
+	public interface IPlane : IVehicle
+	{
+		int Engines { get; set; }
 	}
 }
                                                         

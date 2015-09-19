@@ -31,9 +31,9 @@ namespace Examples.Classes
                 .FirstOrDefault();
             if (elm != null)
             {
-                IVehicle car = new Car();
+                var car = new Car();
                 car.Cost = elm.Element("cost").Value;
-                car.Manufacturer = elm.Element("manufacturer").Value;
+				car.ManufacturerID = Convert.ToInt32(elm.Element("manufacturerid").Value);
                 car.Name = carName;
                 car.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
                 car.Wheels = Convert.ToInt32(elm.Element("wheels").Value);
@@ -57,9 +57,9 @@ namespace Examples.Classes
 
             if (elm != null)
             {
-                IVehicle plane = new Plane();
+                var plane = new Plane();
                 plane.Cost = elm.Element("cost").Value;
-                plane.Manufacturer = elm.Element("manufacturer").Value;
+				plane.ManufacturerID = Convert.ToInt32(elm.Element("manufacturerid").Value);
                 plane.Name = planeName;
                 plane.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
                 plane.Engines = Convert.ToInt32(elm.Element("engines").Value);
@@ -99,7 +99,7 @@ namespace Examples.Classes
             {
                 var car = new Car();
                 car.Cost = elm.Element("cost").Value;
-                car.Manufacturer = elm.Element("manufacturer").Value;
+				car.ManufacturerID = Convert.ToInt32(elm.Element("manufacturerid").Value);
                 car.Name = elm.Element("name").Value;
                 car.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
                 car.Wheels = Convert.ToInt32(elm.Element("wheels").Value);
@@ -126,7 +126,7 @@ namespace Examples.Classes
             {
                 var plane = new Plane();
                 plane.Cost = elm.Element("cost").Value;
-                plane.Manufacturer = elm.Element("manufacturer").Value;
+                plane.ManufacturerID = Convert.ToInt32(elm.Element("manufacturerid").Value);
                 plane.Name = elm.Element("name").Value;
                 plane.Passengers = Convert.ToInt32(elm.Element("passengers").Value);
                 plane.Engines = Convert.ToInt32(elm.Element("engines").Value);
@@ -135,11 +135,9 @@ namespace Examples.Classes
             return planes;
         }
 
-        public List<string> ReadAllManufacturers()
+		public List<Manufacturer> ReadAllManufacturers()
         {
-            var elms =
-                _doc.Descendants("manufacturer").Select(x => x.Value).ToList();
-            return elms;
+			throw new NotImplementedException();
 
         }
 

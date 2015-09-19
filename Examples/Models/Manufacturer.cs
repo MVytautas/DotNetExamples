@@ -15,6 +15,8 @@ namespace Examples.Models
 		public String Name { get; set; }
 		public VehicleType TypesOfVehicles { get; set; }
 		public String Location { get; set; }
+
+		public List<IVehicle> VehicleProduces { get; set; }
 	}
 
 	[JsonConverter(typeof(StringEnumConverter))]

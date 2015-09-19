@@ -45,9 +45,9 @@ namespace Examples.Classes
 			return _vehicles.planes;
         }
 
-        public List<String> ReadAllManufacturers()
+		public List<Manufacturer> ReadAllManufacturers()
         {
-			var results = new List<String>();
+			var results = new List<Manufacturer>();
 
 			results.AddRange(_vehicles.cars.Select(c => c.Manufacturer));
 
