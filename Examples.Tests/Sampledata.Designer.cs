@@ -150,7 +150,7 @@ namespace Examples.Tests {
         ///	planes:[
         ///		{
         ///			name: &quot;Boeing 747&quot;,
-        ///			cost: 24000000,
+        ///			cost: &quot;24000000&quot;,
         ///			passengers: 524,
         ///			engines: 2,
         ///			manufacturer: &quot;Boeing&quot;,
@@ -169,7 +169,7 @@ namespace Examples.Tests {
         ///			cost: 30000000,
         ///			passengers: 555,
         ///			engines: 4,
-        ///			manufacturer: &quot;Airbus [rest of string was truncated]&quot;;.
+        ///			manufacturer: &quot;Airb [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string VehiclesJson {
             get {
