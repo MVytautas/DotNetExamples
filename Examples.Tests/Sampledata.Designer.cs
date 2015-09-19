@@ -150,34 +150,26 @@ namespace Examples.Tests {
         ///	planes:[
         ///		{
         ///			name: &quot;Boeing 747&quot;,
-        ///			cost: &quot;$24 million&quot;,
+        ///			cost: 24000000,
         ///			passengers: 524,
         ///			engines: 2,
         ///			manufacturer: &quot;Boeing&quot;,
+        ///                                                        manufacturerID: 1,
         ///		},
         ///		{
         ///			name: &quot;F-35&quot;,
-        ///			cost: &quot;$100 million&quot;,
+        ///			cost: 100000000,
         ///			passengers: 1,
         ///			engines: 1,
-        ///			manufacturer: &quot;Lockheed Martin&quot;,
+        ///			manufacturer: &quot;Lockhead Martin&quot;,
+        ///                                                        manufacturerID: 4,
         ///		},
         ///		{
         ///			name: &quot;A380&quot;,
-        ///			cost: &quot;$30 million&quot;,
+        ///			cost: 30000000,
         ///			passengers: 555,
         ///			engines: 4,
-        ///			manufacturer: &quot;Airbus&quot;,
-        ///		},
-        ///		{
-        ///			name: &quot;A350&quot;,
-        ///			cost: &quot;$20 million&quot;,
-        ///			passengers: 280,
-        ///			engines: 4,
-        ///			manufacturer: &quot;Airbus&quot;,
-        ///		}
-        ///	],
-        ///	car [rest of string was truncated]&quot;;.
+        ///			manufacturer: &quot;Airbus [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string VehiclesJson {
             get {

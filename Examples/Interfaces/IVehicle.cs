@@ -16,6 +16,9 @@ namespace Examples.Interfaces
 		int Passengers { get; set; }
 
 		int ManufacturerID { get; set; }
-		Manufacturer Manufacturer { get; set; }
+		string Manufacturer { get; set; }
+	    int Wheels { get; set; }
+	    int Engines { get; set; }
 	}
 }
+                                                        
