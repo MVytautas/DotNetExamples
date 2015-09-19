@@ -17,7 +17,7 @@ namespace Examples
 		
 		List<Car> ReadAllCars();
 		List<Plane> ReadAllPlanes();
-		
-		List<String> ReadAllManufacturers();
+
+		List<Manufacturer> ReadAllManufacturers();
 	}
 }

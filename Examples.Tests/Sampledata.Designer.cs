@@ -121,7 +121,7 @@ namespace Examples.Tests {
         ///			&lt;cost&gt;$24 million&lt;/cost&gt;
         ///			&lt;passengers&gt;524&lt;/passengers&gt;
         ///			&lt;engines&gt;2&lt;/engines&gt;
-        ///			&lt;manufacturer&gt;Boeing&lt;/manufacturer&gt;
+        ///			&lt;manufacturerid&gt;1&lt;/manufacturerid&gt;
         ///		&lt;/plane&gt;
         ///	&lt;/planes&gt;
         ///	&lt;cars&gt;
@@ -130,14 +130,14 @@ namespace Examples.Tests {
         ///			&lt;cost&gt;$20,000&lt;/cost&gt;
         ///			&lt;passengers&gt;5&lt;/passengers&gt;
         ///			&lt;wheels&gt;4&lt;/wheels&gt;
-        ///			&lt;manufacturer&gt;Honda&lt;/manufacturer&gt;
+        ///			&lt;manufacturerid&gt;2&lt;/manufacturerid&gt;
         ///		&lt;/car&gt;
         ///		&lt;car&gt;
         ///			&lt;name&gt;BMW 5 Series&lt;/name&gt;
         ///			&lt;cost&gt;$40,000&lt;/cost&gt;
         ///			&lt;passengers&gt;4&lt;/passengers&gt;
         ///			&lt;wheels&gt;4&lt;/wheels&gt;
-        ///			&lt;manufac [rest of string was truncated]&quot;;.
+        ///			&lt;manufact [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Vehicles {
             get {

@@ -17,7 +17,7 @@ namespace Examples.Tests.Classes
 		public void ReadPlane()
 		{
 			//Arrange
-			var vehicles = new Vehicles() { new Plane { Name = "Boeing 747", Cost = "$50 million", Engines = 4, Manufacturer = "Boeing", Passengers = 500 } };
+			var vehicles = new Vehicles() { new Plane { Name = "Boeing 747", Cost = "$50 million", Engines = 4, ManufacturerID = 1, Passengers = 500 } };
 
 			//Act
 			var plane = vehicles.planes.FirstOrDefault();
@@ -35,7 +35,7 @@ namespace Examples.Tests.Classes
 		public void ReadCar()
 		{
 			//Arrange
-			var vehicles = new Vehicles() { new Car { Name = "Prius", Manufacturer = "Toyota", Cost = "$40,000", Passengers = 5, Wheels = 4 } };
+			var vehicles = new Vehicles() { new Car { Name = "Prius", ManufacturerID = 999, Cost = "$40,000", Passengers = 5, Wheels = 4 } };
 
 			//Act
 			var car = vehicles.cars.FirstOrDefault();
@@ -54,7 +54,7 @@ namespace Examples.Tests.Classes
 		{
 			//Arrange
 			var vehicles = new Vehicles();
-			var car = new Car { Name = "Prius", Manufacturer = "Toyota" };
+			var car = new Car { Name = "Prius", ManufacturerID = 999 };
 
 			//Act
 			vehicles.cars.Add(car);
@@ -83,7 +83,7 @@ namespace Examples.Tests.Classes
 			//Arrange
 			var vehicles = new Vehicles();
 			var plane = new Plane { Name = "Boeing 747" };
-			var car = new Car { Name = "Prius", Manufacturer = "Toyota" };
+			var car = new Car { Name = "Prius", ManufacturerID = 999 };
 
 			//Act
 			vehicles.Add(plane);
