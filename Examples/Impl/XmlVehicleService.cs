@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
+using Examples.Interfaces;
 using Examples.Models;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Examples.Classes
                 .FirstOrDefault();
             if (elm != null)
             {
-                var car = new Car();
+                IVehicle car = new Car();
                 car.Cost = elm.Element("cost").Value;
                 car.Manufacturer = elm.Element("manufacturer").Value;
                 car.Name = carName;
@@ -56,7 +57,7 @@ namespace Examples.Classes
 
             if (elm != null)
             {
-                var plane = new Plane();
+                IVehicle plane = new Plane();
                 plane.Cost = elm.Element("cost").Value;
                 plane.Manufacturer = elm.Element("manufacturer").Value;
                 plane.Name = planeName;
