@@ -35,47 +35,51 @@ namespace Examples.Impl
 
 		public Manufacturer Read(string name)
 		{
-			throw new NotImplementedException();
+            return _manufacturers.Where(m => m.Name == name).FirstOrDefault();
 		}
 
 		public Manufacturer Read(IVehicle vehicle)
 		{
-			throw new NotImplementedException();
+            return _manufacturers.Where(m => m.Name == vehicle.Name).FirstOrDefault();
 		}
 
 		public List<Manufacturer> Read(VehicleType type)
 		{
-			throw new NotImplementedException();
+            //vehicleType = _vehicles.Where()
+            return _manufacturers.Where(m => m.TypesOfVehicles == type).ToList();
 		}
 
 		public List<Manufacturer> ReadLessThanPassengers(int passengers)
 		{
-			throw new NotImplementedException();
+            var passengersFiler = _vehicles.Where(x => x.Name).Select(x => x.Passengers > 4).FirstOrDefault();
+            return _manufacturers.Where(m => m.Name == passengersFiler).ToList();
 		}
 
 		public List<Manufacturer> ReadLessThanCost(int cost)
 		{
-			throw new NotImplementedException();
+            return _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
 		}
 
 		public List<string> ReadLocations(VehicleType type)
 		{
-			throw new NotImplementedException();
+            return _manufacturers.Where(m => m.Location).ToList();
 		}
 
 		public List<string> ReadLocationsLessThanPassengers(int passengers)
 		{
-			throw new NotImplementedException();
+            manufacturerName = _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Passengers > 4)).ToList();
+            return _manufacturers.Where(m => m.Location && manufacturerName).ToList();
 		}
 
 		public List<string> ReadLocationsLessThanCost(int cost)
 		{
-			throw new NotImplementedException();
+            manufacturerName = _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
+            return _manufacturers.Where(m => m.Location && manufacturerName).ToList();
 		}
 
 		public List<IVehicle> ReadVehiclesProduced(Manufacturer manufacturer)
 		{
-			throw new NotImplementedException();
+            return _vehicles.Where(m => m.Manufacturer == manufacturer).ToList();
 		}
 
 	}

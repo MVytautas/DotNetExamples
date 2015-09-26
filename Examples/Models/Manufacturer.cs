@@ -19,7 +19,7 @@ namespace Examples.Models
 		public List<IVehicle> VehicleProduces { get; set; }
 	}
 
-	[JsonConverter(typeof(StringEnumConverter))]
+	//[JsonConverter(typeof(StringEnumConverter))]
 	public enum VehicleType
 	{
 		Car,
