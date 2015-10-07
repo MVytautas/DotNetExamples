@@ -148,7 +148,13 @@ namespace Examples.Classes
         }
 
 
-    }
+
+
+		public void Create(IVehicle vechile)
+		{
+			throw new NotImplementedException();
+		}
+	}
 
     public static class Exstensions
     {

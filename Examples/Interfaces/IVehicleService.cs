@@ -1,4 +1,5 @@
-﻿using Examples.Models;
+﻿using Examples.Interfaces;
+using Examples.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,8 @@ namespace Examples
 		List<Plane> ReadAllPlanes();
 
 		List<Manufacturer> ReadAllManufacturers();
+
+		void Create(IVehicle vechile);
+		//void Delete(IVehicle vechile);)
 	}
 }

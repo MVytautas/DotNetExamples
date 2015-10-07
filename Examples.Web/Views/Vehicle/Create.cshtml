@@ -1,0 +1,24 @@
+﻿@{
+	ViewBag.Title = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm()) { 
+	<table>
+		<tr>
+			<td>Name:</td>
+			<td>@Html.TextBox("name") </td>
+		</tr>
+		<tr>
+			<td>Cost:</td>
+			<td>@Html.TextBox("cost") </td>
+		</tr>
+		<tr>
+			<td>Type:</td>
+			<td>@Html.DropDownList("type", new List<SelectListItem>() { new SelectListItem() { Text = "Car" }, new SelectListItem() { Text = "Plane" }, new SelectListItem() { Text = "Boat" } })</td>
+
+		</tr>
+	</table>
+	<input type="submit" />
+}

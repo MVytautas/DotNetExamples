@@ -55,5 +55,11 @@ namespace Examples.Classes
 
 			return results;
         }
-    }
+
+
+		public void Create(Interfaces.IVehicle vechile)
+		{
+			_vehicles.Add(vechile);
+		}
+	}
 }

@@ -51,6 +51,7 @@ namespace Examples.Impl
 		public List<Manufacturer> ReadLessThanPassengers(int passengers)
 		{
 			throw new NotImplementedException();
+
 		}
 
 		public List<Manufacturer> ReadLessThanCost(int cost)
