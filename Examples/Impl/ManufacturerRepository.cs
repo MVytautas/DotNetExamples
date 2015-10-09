@@ -30,17 +30,17 @@ namespace Examples.Impl
 
 		public Manufacturer Read(int id)
 		{
-			return _manufacturers.Where(m => m.ID == id).FirstOrDefault();
+			return _manufacturers.FirstOrDefault(m => m.ID == id);
 		}
 
 		public Manufacturer Read(string name)
 		{
-            return _manufacturers.Where(m => m.Name == name).FirstOrDefault();
+            return _manufacturers.FirstOrDefault(m => m.Name == name);
 		}
 
 		public Manufacturer Read(IVehicle vehicle)
 		{
-            return _manufacturers.Where(m => m.Name == vehicle.Name).FirstOrDefault();
+            return _manufacturers.FirstOrDefault(m => m.Name == vehicle.Name);
 		}
 
 		public List<Manufacturer> Read(VehicleType type)
@@ -51,8 +51,8 @@ namespace Examples.Impl
 
 		public List<Manufacturer> ReadLessThanPassengers(int passengers)
 		{
-            var passengersFiler = _vehicles.Where(x => x.Name).Select(x => x.Passengers > 4).FirstOrDefault();
-            return _manufacturers.Where(m => m.Name == passengersFiler).ToList();
+            var veciclesFiler = _vehicles.Where(x => x.Passengers > passengers).Select(x => x.Name).FirstOrDefault();
+            return _manufacturers.Where(m => m.VehicleProduces.Any(v => veciclesFiler.Contains(v.Name)) == true).ToList();
 		}
 
 		public List<Manufacturer> ReadLessThanCost(int cost)
