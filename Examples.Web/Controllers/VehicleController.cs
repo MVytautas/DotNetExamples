@@ -1,6 +1,7 @@
 ﻿using Examples.Classes;
 using Examples.Interfaces;
 using Examples.Models;
+using Examples.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,11 @@ namespace Examples.Web.Controllers
 
 		private static JsonVehicleService _vehicleService;
 
-		//
-		// GET: /Vehicle/
+		//List of vehicle
 		public ActionResult Index()
 		{
-			return View();
+			var model = _vehicleService.ReadAllVehicles().Select(v => new VehicleModel(v)).ToList();
+			return View(model);
 		}
 
 		public ActionResult Read(string name)
@@ -36,7 +37,9 @@ namespace Examples.Web.Controllers
 				return Redirect("Error");
 			}
 
-			return View(vehicle);
+			var model = new VehicleModel(vehicle);
+
+			return View(model);
 		}
 
 		[HttpGet]
@@ -47,26 +50,36 @@ namespace Examples.Web.Controllers
 
 
 		[HttpPost]
-		public ActionResult Create(string name, string cost, string type)
+		public ActionResult Create(VehicleModel model)
 		{
 			//save new vehicle to db
 			IVehicle vehicle;
-			if (type == "Car")
+
+			switch (model.Type)
 			{
-				vehicle = new Car() { Name = name, Cost = cost };
-			}
-			else if (type == "Plane")
-			{
-				vehicle = new Plane() { Name = name, Cost = cost };
-			}
-			else
-			{
-				throw new ArgumentException("type not supported");
+				case "Car":
+					vehicle = new Car() { Name = model.Name, Cost = model.Cost };
+					break;
+				case "Plane":
+					vehicle = new Plane() { Name = model.Name, Cost = model.Cost };
+					break;
+				default:
+					throw new ArgumentException("type not supported");
 			}
 
 			_vehicleService.Create(vehicle);
 
-			return RedirectToAction("Read", new { name = name });
+			return RedirectToAction("Read", new { name = model.Name });
+		}
+
+		public ActionResult Edit(VehicleModel model)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ActionResult Delete()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
