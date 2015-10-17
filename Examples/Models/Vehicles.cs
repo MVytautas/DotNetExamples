@@ -7,13 +7,33 @@ using System.Threading.Tasks;
 
 namespace Examples.Models
 {
-	public partial class Vehicles : List<IVehicle>
-	{
-		//TODO: update planes and cars 'get' and 'set' to read and add from the base list
-		public List<Plane> planes { get; set; }
+    //public partial class Vehicles : List<IVehicle>
+    //{
+    //    //TODO: update planes and cars 'get' and 'set' to read and add from the base list
+    //    public List<Plane> planes { get; set; }
 
-		public List<Car> cars { get; set; }
-	}
+    //    public List<Car> cars { get; set; }
+    //}
+
+    public partial class Vehicles : List<IVehicle>
+    {
+        //TODO: update planes and cars 'get' and 'set' to read and add from the base list
+        public List<Plane> planes
+        {
+            get
+            {
+                return this.Where(v => v is Plane).Select(v => (Plane)v).ToList();
+            }
+        }
+
+        public List<Car> cars
+        {
+            get
+            {
+                return this.Where(v => v is Car).Select(v => (Car)v).ToList();
+            }
+        }
+    }
 
 	public abstract class Vehicle : IVehicle
 	{
@@ -32,6 +52,8 @@ namespace Examples.Models
 
 		public Manufacturer Manufacturer { get; set; }
 	}
+
+
 
 	public class Car : Vehicle
 	{

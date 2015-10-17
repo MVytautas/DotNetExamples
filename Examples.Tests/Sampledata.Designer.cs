@@ -147,29 +147,40 @@ namespace Examples.Tests {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///	planes:[
-        ///		{
-        ///			name: &quot;Boeing 747&quot;,
-        ///			cost: &quot;24000000&quot;,
-        ///			passengers: 524,
-        ///			engines: 2,
-        ///			manufacturer: &quot;Boeing&quot;,
-        ///                                                        manufacturerID: 1,
-        ///		},
-        ///		{
-        ///			name: &quot;F-35&quot;,
-        ///			cost: 100000000,
-        ///			passengers: 1,
-        ///			engines: 1,
-        ///			manufacturer: &quot;Lockhead Martin&quot;,
-        ///                                                        manufacturerID: 4,
-        ///		},
-        ///		{
-        ///			name: &quot;A380&quot;,
-        ///			cost: 30000000,
-        ///			passengers: 555,
-        ///			engines: 4,
-        ///			manufacturer: &quot;Airb [rest of string was truncated]&quot;;.
+        /// planes:[
+        ///  {
+        ///   name: &quot;Boeing 747&quot;,
+        ///   cost: &quot;24000000&quot;,
+        ///   passengers: 524,
+        ///   engines: 2,
+        ///            manufacturerID: 1,
+        ///  },
+        ///  {
+        ///   name: &quot;F-35&quot;,
+        ///   cost: &quot;100000000&quot;,
+        ///   passengers: 1,
+        ///   engines: 1,
+        ///   manufacturerID: 4,
+        ///  },
+        ///  {
+        ///   name: &quot;A380&quot;,
+        ///   cost: &quot;30000000&quot;,
+        ///   passengers: 555,
+        ///   engines: 4,
+        ///   manufacturerID: 7,
+        ///  },
+        ///  {
+        ///   name: &quot;A350&quot;,
+        ///   cost: &quot;20000000&quot;,
+        ///   passengers: 280,
+        ///   engines: 4,
+        ///   manufacturerID: 7,
+        ///  }
+        /// ],
+        /// cars:[
+        ///  {
+        ///   name: &quot;Accord&quot;,
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string VehiclesJson {
             get {

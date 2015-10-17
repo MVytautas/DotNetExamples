@@ -1,4 +1,5 @@
-﻿using Examples.Interfaces;
+﻿using System.Data;
+using Examples.Interfaces;
 using Examples.Models;
 using System;
 using System.Collections.Generic;
@@ -57,24 +58,28 @@ namespace Examples.Impl
 
 		public List<Manufacturer> ReadLessThanCost(int cost)
 		{
-            return _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
+            //return _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
+            throw new NotImplementedException();
 		}
 
 		public List<string> ReadLocations(VehicleType type)
 		{
-            return _manufacturers.Where(m => m.Location).ToList();
+            //return _manufacturers.Where(m => m.Location).ToList();
+            throw new NotImplementedException();
 		}
 
 		public List<string> ReadLocationsLessThanPassengers(int passengers)
 		{
-            manufacturerName = _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Passengers > 4)).ToList();
-            return _manufacturers.Where(m => m.Location && manufacturerName).ToList();
+            return _manufacturers.Where(m => _vehicles.Any(x => x.Passengers < passengers && x.ManufacturerID == m.ID )).Select(m => m.Location).ToList(); 
+            //return _manufacturers.Where(manufacturerName).ToList();
+		    //throw new NotImplementedException();
 		}
 
 		public List<string> ReadLocationsLessThanCost(int cost)
 		{
-            manufacturerName = _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
-            return _manufacturers.Where(m => m.Location && manufacturerName).ToList();
+            //var manufacturerName = _manufacturers.Where(m => m.Name == _vehicles.Where(x => x.Name).Select(x => x.Cost > 40000)).ToList();
+            //return _manufacturers.Where(m => m.Location && manufacturerName).ToList();
+            throw new NotImplementedException();
 		}
 
 		public List<IVehicle> ReadVehiclesProduced(Manufacturer manufacturer)

@@ -17,9 +17,15 @@ namespace Examples.Tests.Classes
 		[TestInitialize]
 		public void Setup()
 		{
-			var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
+			//var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
 
 			var sampleManufactures = JsonConvert.DeserializeObject<List<Manufacturer>>(Sampledata.Manufacturers);
+
+            //var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
+            var sampleDB = new Vehicles();
+            var tmp = JsonConvert.DeserializeAnonymousType(Sampledata.VehiclesJson, new { planes = new List<Plane>(), cars = new List<Car>() });
+            sampleDB.AddRange(tmp.cars);
+            sampleDB.AddRange(tmp.planes);
 
 			_manufacturerRepository = new ManufacturerRepository(sampleDB, sampleManufactures);
 
