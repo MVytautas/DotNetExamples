@@ -199,73 +199,73 @@ Location: "France",
   </data>
   <data name="VehiclesJson" xml:space="preserve">
     <value>{
- planes:[
-  {
-   name: "Boeing 747",
-   cost: "24000000",
-   passengers: 524,
-   engines: 2,
+	planes:[
+		{
+			name: "Boeing 747",
+			cost: "24000000",
+			passengers: 524,
+			engines: 2,
             manufacturerID: 1,
-  },
-  {
-   name: "F-35",
-   cost: "100000000",
-   passengers: 1,
-   engines: 1,
-   manufacturerID: 4,
-  },
-  {
-   name: "A380",
-   cost: "30000000",
-   passengers: 555,
-   engines: 4,
-   manufacturerID: 7,
-  },
-  {
-   name: "A350",
-   cost: "20000000",
-   passengers: 280,
-   engines: 4,
-   manufacturerID: 7,
-  }
- ],
- cars:[
-  {
-   name: "Accord",
-   cost: "20000",
-   passengers: 5,
-   wheels: 4,
-   manufacturerID: 2,
-  },
-  {
-   name: "Civic",
-   cost: "15000",
-   passengers: 4,
-   wheels: 4,
-   manufacturerID: 2,
-  },
-  {
-   name: "BMW 5 Series",
-   cost: "40000",
-   passengers: 4,
-   wheels: 4,
-   manufacturerID: 3,
-  },
-  {
-   name: "Beetle",
-   cost: "35000",
-   passengers: 4,
-   wheels: 4,
-   manufacturerID: 6,
-  },
-  {
-   name: "Jetta",
-   cost: "39000",
-   passengers: 5,
-   wheels: 4,
-   manufacturerID: 6,
-  }
- ]
+		},
+		{
+			name: "F-35",
+			cost: "100000000",
+			passengers: 1,
+			engines: 1,
+			manufacturerID: 4,
+		},
+		{
+			name: "A380",
+			cost: "30000000",
+			passengers: 555,
+			engines: 4,
+			manufacturerID: 7,
+		},
+		{
+			name: "A350",
+			cost: "20000000",
+			passengers: 280,
+			engines: 4,
+			manufacturerID: 7,
+		}
+	],
+	cars:[
+		{
+			name: "Accord",
+			cost: "20000",
+			passengers: 5,
+			wheels: 4,
+			manufacturerID: 2,
+		},
+		{
+			name: "Civic",
+			cost: "15000",
+			passengers: 4,
+			wheels: 4,
+			manufacturerID: 2,
+		},
+		{
+			name: "BMW 5 Series",
+			cost: "40000",
+			passengers: 4,
+			wheels: 4,
+			manufacturerID: 3,
+		},
+		{
+			name: "Beetle",
+			cost: "35000",
+			passengers: 4,
+			wheels: 4,
+			manufacturerID: 6,
+		},
+		{
+			name: "Jetta",
+			cost: "39000",
+			passengers: 5,
+			wheels: 4,
+			manufacturerID: 6,
+		}
+	]
 }</value>
   </data>
 </root>

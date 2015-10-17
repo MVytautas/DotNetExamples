@@ -18,6 +18,10 @@ namespace Examples.Tests.Classes
 		public void Setup()
 		{
 			//var sampleDB = JsonConvert.DeserializeObject<Vehicles>(Sampledata.VehiclesJson);
+			var sampleDB = new Vehicles();
+			var tmp = JsonConvert.DeserializeAnonymousType(Sampledata.VehiclesJson, new { planes = new List<Plane>(), cars = new List<Car>() });
+			sampleDB.AddRange(tmp.cars);
+			sampleDB.AddRange(tmp.planes);
 
 			var sampleManufactures = JsonConvert.DeserializeObject<List<Manufacturer>>(Sampledata.Manufacturers);
 
@@ -109,7 +113,15 @@ namespace Examples.Tests.Classes
 		[TestMethod]
 		public void Read_By_ID()
 		{
-			throw new NotImplementedException();
+			//Arrange
+			var ID = 1;
+
+			//Act
+			var result = _manufacturerRepository.Read(ID);
+
+			//Assert
+			Assert.IsNotNull(result);
+			Assert.AreEqual(result.Name, "Boeing");
 		}
 
 		[TestMethod]

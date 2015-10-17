@@ -1,0 +1,22 @@
+﻿@model List<Examples.Web.Models.VehicleModel>
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Cost</th>
+		<th>Type</th>
+	</tr>
+	@foreach (var vehicle in Model)
+	{
+		<tr>
+			<td>@vehicle.Name</td>
+			<td>@vehicle.Cost</td>
+			<td>@vehicle.Type</td>
+		</tr>
+	}
+</table>
