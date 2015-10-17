@@ -52,8 +52,9 @@ namespace Examples.Impl
 
 		public List<Manufacturer> ReadLessThanPassengers(int passengers)
 		{
-            var veciclesFiler = _vehicles.Where(x => x.Passengers > passengers).Select(x => x.Name).FirstOrDefault();
-            return _manufacturers.Where(m => m.VehicleProduces.Any(v => veciclesFiler.Contains(v.Name)) == true).ToList();
+            return _vehicles.Where(m => _vehicles.Where(x => x.Passengers < passengers && x.ManufacturerID == m.)).Select(m => m.).ToList(); 
+            //var veciclesFiler = _vehicles.Where(x => x.Passengers > passengers).Select(x => x.Name).FirstOrDefault();
+            //return _manufacturers.Where(m => m.VehicleProduces.Any(v => veciclesFiler.Contains(v.Name)) == true).ToList();
 		}
 
 		public List<Manufacturer> ReadLessThanCost(int cost)
